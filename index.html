@@ -1,11 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script src="index.js"></script>
-</body>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Pokemon Cards</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    
+    <div id="pokemon-header">
+      <img
+        src="https://fontmeme.com/images/Pokemon-Logo.jpg"
+        alt="pokemon-header"
+      />
+    </div>
+
+    <div class="container">
+      <form class="add-pokemon-form">
+        <h3>Create a pokemon!</h3>
+
+        <input
+          type="text"
+          name="name"
+          value=""
+          placeholder="Enter a pokemon's name..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="text"
+          name="image"
+          value=""
+          placeholder="Enter a pokemon's image URL..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="submit"
+          name="submit"
+          value="Create pokemon"
+          class="submit"
+        />
+      </form>
+    </div>
+
+    <p style="text-align:center">
+      We need your help! <button id="new-pokemon-btn">Add a new pokemon!</button>
+    </p>
+
+    <div id="pokemon-collection"></div>
+
+    <script type="text/javascript" src="index.js"></script>
+
+  </body>
 </html>
