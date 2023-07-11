@@ -6,10 +6,14 @@ body {
 #pokemon-header {
   display: flex;
   justify-content: center;
-  background: #515DA2;
+  background: #fbd204;
   opacity: .8;
   height: 7rem;
   padding: 1rem;
+}
+
+img {
+  border: 5px solid #323131;
 }
 
 #pokemon-header img {
@@ -36,6 +40,14 @@ body {
   justify-self: center;
   height: 12rem;
   width: auto;
+}
+
+p {
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
 }
 
 button {
@@ -65,8 +77,16 @@ button:hover {
   opacity: .8;
 }
 
+.container-black {
+  padding: 1rem;
+  width: stretch;
+  height: auto;
+  background: #030303;
+  opacity: .8;
+}
+
 .add-pokemon-form {
-  width: 80%
+  width: 60%
 }
 
 .submit {
@@ -97,3 +117,4 @@ button:hover {
   font-family: monospace;
   margin: 3px;
 }
+

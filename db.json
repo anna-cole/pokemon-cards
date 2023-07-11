@@ -4,36 +4,36 @@
       "id": 1,
       "name": "Pikachu",
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
-      "description": "When it is angered, it immediately discharges the energy stored in the pouches in its cheeks.",
+      "description": "When it is angered, it discharges the energy stored in its cheeks.",
       "type": "Electric",
-      "Weakness": "Ground",
-      "likes": 0
+      "weakness": "Ground",
+      "likes": 3
     },
     {
       "id": 2,
       "name": "Mew",
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png",
-      "description": "When viewed through a microscope, this Pokémon’s short, fine, delicate hair can be seen.",
+      "description": "When viewed through a microscope, his delicate hair can be seen.",
       "type": "Psychic",
-      "Weakness": "Ghost",
+      "weakness": "Ghost",
       "likes": 0
     },
     {
       "id": 3,
       "name": "Ivysaur",
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png",
-      "description": "When viewed through a microscope, this Pokémon’s short, fine, delicate hair can be seen.",
+      "description": "When the bulb on its back grows large, it loses the ability to stand on its hind legs.",
       "type": "Poison",
-      "Weakness": "Fire",
-      "likes": 0
+      "weakness": "Fire",
+      "likes": 1
     },
     {
       "id": 4,
       "name": "Charmander",
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
-      "description": "It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.",
+      "description": "It has a preference for hot things. When it rains, steam spouts from the tip of its tail.",
       "type": "Fire",
-      "Weakness": "Water",
+      "weakness": "Water",
       "likes": 0
     },
     {
@@ -42,43 +42,43 @@
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
       "description": "When it retracts its long neck into its shell, it squirts out water with vigorous force.",
       "type": "Water",
-      "Weakness": "Grass",
+      "weakness": "Grass",
       "likes": 0
     },
     {
       "id": 6,
       "name": "Charizard",
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png",
-      "description": "It is said that Charizard’s fire burns hotter if it has experienced harsh battles.",
+      "description": "His fire burns hotter if it has experienced harsh battles.",
       "type": "Fire",
-      "Weakness": "Water",
+      "weakness": "Water",
       "likes": 0
     },
     {
       "id": 7,
       "name": "Beedrill",
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/015.png",
-      "description": "It has three poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.",
+      "description": "It has poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.",
       "type": "Bug",
-      "Weakness": "Fire",
+      "weakness": "Fire",
       "likes": 0
     },
     {
       "id": 8,
       "name": "Sandshrew",
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/027.png",
-      "description": "It loves to bathe in the grit of dry, sandy areas. By sand bathing, the Pokémon rids itself of dirt and moisture clinging to its body.",
+      "description": "It loves to bathe in sandy areas to rids itself of dirt and moisture clinging to its body.",
       "type": "Ground",
-      "Weakness": "Water",
-      "likes": 0
+      "weakness": "Water",
+      "likes": 1
     },
     {
       "name": "Ninetales",
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/038.png",
       "description": "It is said to live 1,000 years, and each of its tails is loaded with supernatural powers.",
       "type": "Fire",
-      "Weakness": "Water",
-      "likes": 0,
+      "weakness": "Water",
+      "likes": 5,
       "id": 9
     }
   ]

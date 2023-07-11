@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
   <head>
     <meta charset="utf-8" />
     <title>Pokemon Cards</title>
@@ -8,7 +7,6 @@
   </head>
 
   <body>
-    
     <div id="pokemon-header">
       <img
         src="https://fontmeme.com/images/Pokemon-Logo.jpg"
@@ -37,6 +35,30 @@
         />
         <br />
         <input
+          type="text"
+          name="description"
+          value=""
+          placeholder="Enter a pokemon's description..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="text"
+          name="type"
+          value=""
+          placeholder="Enter a pokemon's type..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="text"
+          name="weakness"
+          value=""
+          placeholder="Enter a pokemon's weakness..."
+          class="input-text"
+        />
+        <br />
+        <input
           type="submit"
           name="submit"
           value="Create pokemon"
@@ -45,10 +67,18 @@
       </form>
     </div>
 
-    <p style="text-align:center">
-      We need your help! <button id="new-pokemon-btn">Add a new pokemon!</button>
-    </p>
+    <div class="container-black">
+      <p style="text-align:center">
+        <button id="new-pokemon-btn">Click to add a new pokemon!</button>
+      </p><br>
 
+      <form style="text-align:center" id="search-form"> 
+        <label style="color: white">Search for a pokemon</label>
+        <input type="search" id="query" name="name" placeholder="Enter a pokemon's name">
+        <button id="search-btn">Search</button>
+      </form>
+    </div>
+ 
     <div id="pokemon-collection"></div>
 
     <script type="text/javascript" src="index.js"></script>

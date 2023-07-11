@@ -1,91 +1,101 @@
-// hide & seek with the form
+document.addEventListener("DOMContentLoaded", () => hideForm());
 
 let addPokemon = false;
+const addBtn = document.querySelector("#new-pokemon-btn");
+const formContainer = document.querySelector(".container");
+const addForm = document.querySelector('.add-pokemon-form');
+const searchForm = document.querySelector('#search-form');
 
-document.addEventListener("DOMContentLoaded", () => {
-  const addBtn = document.querySelector("#new-pokemon-btn");
-  const pokemonFormContainer = document.querySelector(".container");
+// hide & seek the form  
+function hideForm() {
   addBtn.addEventListener("click", () => {
     addPokemon = !addPokemon;
-    if (addPokemon) {
-      pokemonFormContainer.style.display = "block";
+    if(addPokemon) {
+      formContainer.style.display = "block";
     } else {
-      pokemonFormContainer.style.display = "none";
-    }
+      formContainer.style.display = "none";
+    };
   });
+}
+
+// Search for a pokemon 
+searchForm.addEventListener("submit", e => {
+  e.preventDefault()
+  const name = e.target.name.value
+  console.log(e)
+  e.target.reset()
 });
+  
+// Fetch pokemons from the server by doing a GET request. 
+fetch('http://localhost:3000/pokemons')
+.then(resp => resp.json())
+.then(data => data.forEach(pokemon => renderPokemons(pokemon)))
 
-// Fetch pokemons from the server. 
+// Render the pokemons in the DOM, by making a card for each pokemon and adding it to the pokemon-collection div. Then, add pokemon info into cards.
+function renderPokemons(pokemon) {
+  const cardsContainer = document.querySelector('#pokemon-collection');
+  const card = document.createElement('div');
+  card.className = 'card';
 
-// fetch('http://localhost:3000/pokemons')
-// .then(resp => resp.json())
-// .then(data => data.forEach(pokemon => renderPokemons(pokemon)))
+  card.innerHTML = `
+  <h2>${pokemon.name}</h2>
+  <img src="${pokemon.image}" class="pokemon-avatar">
+  <p>${pokemon.description}</p>
+  <p style="color: blue">Type: ${pokemon.type}</p>
+  <p style="color: red">Weakness: ${pokemon.weakness}</p>
+  <h4>${pokemon.likes} likes</h4>
+  <button class="like-btn" id=${pokemon.id}>Like ❤️</button>`
+  
+  const likeBtn = card.querySelector('.like-btn')
+  likeBtn.addEventListener('click', () => {
+    const likes = card.querySelector('h4')
+    likes.textContent = `${pokemon.likes+= 1} likes`
+    updateLikes(pokemon.id, pokemon.likes)
+  });
+  cardsContainer.appendChild(card);
+}
 
-// // With the response data, render the pokemons in the DOM, by making a card <div class="card"> for each pokemon and adding it to the pokemon-collection div. Then, add pokemon info into the cards.
+// Add a new pokemon: when a user submits the pokemon form, send a POST request to add a new pokemon. If the post is successful, the pokemon should be added to the DOM without reloading the page.
+addForm.addEventListener('submit', e => {
+  e.preventDefault()
+  const newPokemonObj = {
+    name: e.target.name.value,
+    image: e.target.image.value,
+    description: e.target.description.value,
+    type: e.target.type.value,
+    weakness: e.target.weakness.value,
+    likes: 0
+  }
+  addNewPokemon(newPokemonObj);
+  e.target.reset();
+})
 
-// function renderPokemons(pokemon) {
-//     let pokemonContainer = document.querySelector('#pokemon-collection');
-//     let card = document.createElement('div');
-//     card.className = 'card';
+// Make the POST request to add the new pokemon to the DOM.
+function addNewPokemon(newPokemonObj) {
+  const configObj = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    },
+    body: JSON.stringify(newPokemonObj)
+  }
+  fetch('http://localhost:3000/pokemons', configObj)
+  .then(res => res.json())
+  .then(newPokemon => renderPokemons(newPokemon))
+}
 
-//     card.innerHTML = `
-//     <h2>${pokemon.name}</h2>
-//     <img src="${pokemon.image}" class="pokemon-avatar">
-//     <p>${pokemon.likes} likes</p>
-//     <button class="like-btn" id=${pokemon.id}>Like ❤️</button>`
-    
-//     const likeBtn = card.querySelector('.like-btn')
-//     likeBtn.addEventListener('click', () => {
-//       let p = card.querySelector('p')
-//       p.textContent = `${pokemon.likes+= 1} likes`
-//       updateLikes(pokemon.id, pokemon.likes)
-//     })
-//     pokemonContainer.appendChild(card)
-//   }
-
-// // Add a new pokemon. When a user submits the pokemon form, send a POST request to add the new pokemon to the collection. If the post is successful, the pokemon should be added to the DOM without reloading the page.
-
-// const form = document.querySelector('.add-pokemon-form')
-
-// form.addEventListener('submit', e => {
-//   e.preventDefault()
-//   //console.log(e.target.name)
-//   let newPokemonObj = {
-//     name: e.target.name.value,
-//     image: e.target.image.value,
-//     likes: 0
-//   }
-//   renderNewPokemon(newPokemonObj)
-//   e.target.reset()
-// })
-
-// // Then, make the POST request to send to the server the new card.
-// function renderNewPokemon(newPokemonObj) {
-//   const configObj = {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       Accept: 'application/json'
-//     },
-//     body: JSON.stringify(newPokemonObj)
-//   }
-//   fetch('http://localhost:3000/pokemons', configObj)
-//   .then(res => res.json())
-//   .then(newPokemon => renderPokemons(newPokemon))
-// }
-
-// // Then, make the PATCH request to update the number of likes in the server.
-// function updateLikes(id, newNumberOfLikes) {
-//   fetch(`http://localhost:3000/pokemons/${id}`, {
-//     method: 'PATCH',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       Accept: 'application/json'
-//     },
-//     body: JSON.stringify({likes: newNumberOfLikes})
-//   })
-//   .then(resp => resp.json())
-//   .then(updatedPokemon => console.log(updatedPokemon))
-// }
+// Make the PATCH request to send the number of likes to the server.
+function updateLikes(id, numberOfLikes) {
+  fetch(`http://localhost:3000/pokemons/${id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    },
+    body: JSON.stringify({likes: numberOfLikes})
+  })
+  .then(resp => resp.json())
+}
 
 
