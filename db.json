@@ -7,7 +7,7 @@
       "description": "When it is angered, it discharges the energy stored in its cheeks.",
       "type": "Electric",
       "weakness": "Ground",
-      "likes": 3
+      "likes": 1
     },
     {
       "id": 2,
@@ -25,7 +25,7 @@
       "description": "When the bulb on its back grows large, it loses the ability to stand on its hind legs.",
       "type": "Poison",
       "weakness": "Fire",
-      "likes": 1
+      "likes": 0
     },
     {
       "id": 4,
@@ -70,16 +70,16 @@
       "description": "It loves to bathe in sandy areas to rids itself of dirt and moisture clinging to its body.",
       "type": "Ground",
       "weakness": "Water",
-      "likes": 1
+      "likes": 0
     },
     {
+      "id": 9,
       "name": "Ninetales",
       "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/038.png",
       "description": "It is said to live 1,000 years, and each of its tails is loaded with supernatural powers.",
       "type": "Fire",
       "weakness": "Water",
-      "likes": 5,
-      "id": 9
+      "likes": 0
     }
   ]
 }

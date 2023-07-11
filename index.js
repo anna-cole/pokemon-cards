@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => hideForm());
+document.addEventListener("DOMContentLoaded", () => hideForm())
 
 let addPokemon = false;
 const addBtn = document.querySelector("#new-pokemon-btn");
@@ -14,17 +14,20 @@ function hideForm() {
       formContainer.style.display = "block";
     } else {
       formContainer.style.display = "none";
-    };
-  });
+    }
+  })
 }
 
 // Search for a pokemon 
 searchForm.addEventListener("submit", e => {
   e.preventDefault()
-  const name = e.target.name.value
-  console.log(e)
+  const name = e.target.name.value;
+  //if(name === ) {
+  //   renderPokemons(pokemon)
+  // }
+  console.log(name)
   e.target.reset()
-});
+})
   
 // Fetch pokemons from the server by doing a GET request. 
 fetch('http://localhost:3000/pokemons')
@@ -46,13 +49,13 @@ function renderPokemons(pokemon) {
   <h4>${pokemon.likes} likes</h4>
   <button class="like-btn" id=${pokemon.id}>Like ❤️</button>`
   
-  const likeBtn = card.querySelector('.like-btn')
+  const likeBtn = card.querySelector('.like-btn');
   likeBtn.addEventListener('click', () => {
-    const likes = card.querySelector('h4')
-    likes.textContent = `${pokemon.likes+= 1} likes`
+    const likes = card.querySelector('h4');
+    likes.textContent = `${pokemon.likes+= 1} likes`;
     updateLikes(pokemon.id, pokemon.likes)
-  });
-  cardsContainer.appendChild(card);
+  })
+  cardsContainer.appendChild(card)
 }
 
 // Add a new pokemon: when a user submits the pokemon form, send a POST request to add a new pokemon. If the post is successful, the pokemon should be added to the DOM without reloading the page.
@@ -66,8 +69,8 @@ addForm.addEventListener('submit', e => {
     weakness: e.target.weakness.value,
     likes: 0
   }
-  addNewPokemon(newPokemonObj);
-  e.target.reset();
+  addNewPokemon(newPokemonObj)
+  e.target.reset()
 })
 
 // Make the POST request to add the new pokemon to the DOM.
