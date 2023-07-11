@@ -5,6 +5,7 @@ const addBtn = document.querySelector("#new-pokemon-btn");
 const formContainer = document.querySelector(".container");
 const addForm = document.querySelector('.add-pokemon-form');
 const searchForm = document.querySelector('#search-form');
+let cardsContainer = document.querySelector('#pokemon-collection');
 
 // hide & seek the form  
 function hideForm() {
@@ -18,25 +19,30 @@ function hideForm() {
   })
 }
 
-// Search for a pokemon 
-searchForm.addEventListener("submit", e => {
-  e.preventDefault()
-  
-  //if(name === ) {
-  //   renderPokemons(pokemon)
-  // }
-  console.log(e.target.q.value)
-  e.target.reset()
-})
-  
-// Fetch pokemons from the server by doing a GET request. 
+// Fetch pokemons from the server with a GET request. 
 fetch('http://localhost:3000/pokemons')
 .then(resp => resp.json())
-.then(data => data.forEach(pokemon => renderPokemons(pokemon)))
+.then(data => data.forEach(pokemon => {search(pokemon), renderPokemons(pokemon)}))
 
-// Render the pokemons in the DOM, by making a card for each pokemon and adding it to the pokemon-collection div. Then, add pokemon info into cards.
+// Search for a pokemon 
+function search(pokemon) {
+  searchForm.addEventListener("submit", e => {
+    e.preventDefault()
+    const inputName = e.target.q.value;
+    const firstletter = inputName.charAt(0);
+    const firstLetterCap = firstletter.toUpperCase();
+    const remainingLetters = inputName.slice(1);
+    const capitalizedWord = firstLetterCap + remainingLetters;
+    if(capitalizedWord === pokemon.name) {
+      cardsContainer.textContent = ''
+      renderPokemons(pokemon)
+    }
+    e.target.reset()
+  })
+}
+
+// Render pokemons in the DOM, by making a card for each pokemon and adding them to the pokemon-collection div. Then, add pokemon info into cards.
 function renderPokemons(pokemon) {
-  const cardsContainer = document.querySelector('#pokemon-collection');
   const card = document.createElement('div');
   card.className = 'card';
 
@@ -58,7 +64,7 @@ function renderPokemons(pokemon) {
   cardsContainer.appendChild(card)
 }
 
-// Add a new pokemon: when a user submits the pokemon form, send a POST request to add a new pokemon. If the post is successful, the pokemon should be added to the DOM without reloading the page.
+// Add a new pokemon: when submitting the form, send a POST request to add the new pokemon. If the post is successful, the pokemon should be added to the DOM without reloading the page.
 addForm.addEventListener('submit', e => {
   e.preventDefault()
   const newPokemonObj = {
@@ -100,4 +106,3 @@ function updateLikes(id, numberOfLikes) {
   })
   .then(resp => resp.json())
 }
-

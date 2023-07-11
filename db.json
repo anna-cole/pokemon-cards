@@ -7,7 +7,7 @@
       "description": "When it is angered, it discharges the energy stored in its cheeks.",
       "type": "Electric",
       "weakness": "Ground",
-      "likes": 1
+      "likes": 2
     },
     {
       "id": 2,
@@ -61,7 +61,7 @@
       "description": "It has poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.",
       "type": "Bug",
       "weakness": "Fire",
-      "likes": 0
+      "likes": 1
     },
     {
       "id": 8,
@@ -79,7 +79,7 @@
       "description": "It is said to live 1,000 years, and each of its tails is loaded with supernatural powers.",
       "type": "Fire",
       "weakness": "Water",
-      "likes": 0
+      "likes": 1
     }
   ]
 }
