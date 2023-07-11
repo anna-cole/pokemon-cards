@@ -21,11 +21,11 @@ function hideForm() {
 // Search for a pokemon 
 searchForm.addEventListener("submit", e => {
   e.preventDefault()
-  const name = e.target.name.value;
+  
   //if(name === ) {
   //   renderPokemons(pokemon)
   // }
-  console.log(name)
+  console.log(e.target.q.value)
   e.target.reset()
 })
   
@@ -100,5 +100,4 @@ function updateLikes(id, numberOfLikes) {
   })
   .then(resp => resp.json())
 }
-
 
