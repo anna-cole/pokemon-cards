@@ -21,5 +21,6 @@ We welcome any and all contributions! Here are some ways you can get started:
 5. Wait for pull request to be merged
 
 ## Credits
+https://www.pokemon.com/us
 
 
