@@ -65,7 +65,7 @@ function renderPokemons(pokemon) {
     element.addEventListener("mouseout", () => normalSize())
   
     function changeSize() {
-      element.style.width = '17rem';
+      element.style.width = '17rem'
       element.style.height = '27rem'
     }
     function normalSize() {
