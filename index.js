@@ -61,7 +61,21 @@ function renderPokemons(pokemon) {
     likes.textContent = `${pokemon.likes+= 1} likes`;
     updateLikes(pokemon.id, pokemon.likes)
   })
+
   cardsContainer.appendChild(card)
+
+  //Mouseover event listener for each card
+  const bigCard = document.querySelectorAll(".card");
+  bigCard.forEach(element => {
+    element.addEventListener("mouseover", () => {
+      element.style.width = '17rem'
+      element.style.height = '27rem'
+    })
+    element.addEventListener("mouseout", () => {
+      element.style.width = '15rem'
+      element.style.height = '25rem'
+    })
+  })
 }
 
 // Add a new pokemon: when submitting the form, send a POST request to add the new pokemon. If the post is successful, the pokemon should be added to the DOM without reloading the page.
