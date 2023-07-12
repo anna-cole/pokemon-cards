@@ -7,7 +7,7 @@
       "description": "When it is angered, it discharges the energy stored in its cheeks.",
       "type": "Electric",
       "weakness": "Ground",
-      "likes": 2
+      "likes": 3
     },
     {
       "id": 2,

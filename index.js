@@ -1,11 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => hideForm())
-
 let addPokemon = false;
 const addBtn = document.querySelector("#new-pokemon-btn");
 const formContainer = document.querySelector(".container");
 const addForm = document.querySelector('.add-pokemon-form');
 const searchForm = document.querySelector('#search-form');
 let cardsContainer = document.querySelector('#pokemon-collection');
+
+document.addEventListener("DOMContentLoaded", () => hideForm())
 
 // hide & seek the form  
 function hideForm() {
@@ -41,7 +41,7 @@ function search(pokemon) {
   })
 }
 
-// Render pokemons in the DOM, by making a card for each pokemon and adding them to the pokemon-collection div. Then, add pokemon info into cards.
+// Render pokemons in the DOM, by making a card for each pokemon and adding them to the collection div. Then, add pokemon info into cards.
 function renderPokemons(pokemon) {
   const card = document.createElement('div');
   card.className = 'card';
@@ -55,30 +55,33 @@ function renderPokemons(pokemon) {
   <h4>${pokemon.likes} likes</h4>
   <button class="like-btn" id=${pokemon.id}>Like ❤️</button>`
   
+  // Like button functionality
   const likeBtn = card.querySelector('.like-btn');
   likeBtn.addEventListener('click', () => {
     const likes = card.querySelector('h4');
     likes.textContent = `${pokemon.likes+= 1} likes`;
     updateLikes(pokemon.id, pokemon.likes)
   })
-
   cardsContainer.appendChild(card)
 
-  //Mouseover event listener for each card
+  // Mouseover & mouseout event listeners for each card
   const bigCard = document.querySelectorAll(".card");
   bigCard.forEach(element => {
-    element.addEventListener("mouseover", () => {
+    element.addEventListener("mouseover", () => changeSize());
+    element.addEventListener("mouseout", () => normalSize());
+  
+    function changeSize() {
       element.style.width = '17rem'
       element.style.height = '27rem'
-    })
-    element.addEventListener("mouseout", () => {
+    }
+    function normalSize() {
       element.style.width = '15rem'
       element.style.height = '25rem'
-    })
+    }
   })
 }
 
-// Add a new pokemon: when submitting the form, send a POST request to add the new pokemon. If the post is successful, the pokemon should be added to the DOM without reloading the page.
+// When submitting the form, send a POST request to create a new pokemon. If the post is successful, the pokemon should be added to the DOM without reloading the page.
 addForm.addEventListener('submit', e => {
   e.preventDefault()
   const newPokemonObj = {
@@ -93,7 +96,7 @@ addForm.addEventListener('submit', e => {
   e.target.reset()
 })
 
-// Make the POST request to add the new pokemon to the DOM.
+// Add the new pokemon to the DOM with a POST request.
 function addNewPokemon(newPokemonObj) {
   const configObj = {
     method: 'POST',
@@ -108,7 +111,7 @@ function addNewPokemon(newPokemonObj) {
   .then(newPokemon => renderPokemons(newPokemon))
 }
 
-// Make the PATCH request to send the number of likes to the server.
+// Update the number of likes by sending a PATCH request to the server.
 function updateLikes(id, numberOfLikes) {
   fetch(`http://localhost:3000/pokemons/${id}`, {
     method: 'PATCH',
