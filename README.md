@@ -9,7 +9,7 @@ All of the pokemon data is stored in the db.json file. You'll access this data u
 ```bash
 npm install -g json-server
 ```
-Then, run the below to start the server:
+Then, run the below in the terminal to start the server:
 
 ```bash
 json-server --watch db.json
