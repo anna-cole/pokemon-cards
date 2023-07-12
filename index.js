@@ -1,38 +1,35 @@
-let addPokemon = false;
-const addBtn = document.querySelector("#new-pokemon-btn");
-const formContainer = document.querySelector(".container");
-const addForm = document.querySelector('.add-pokemon-form');
-const searchForm = document.querySelector('#search-form');
-let cardsContainer = document.querySelector('#pokemon-collection');
+let addPokemon = false
+const addBtn = document.querySelector("#new-pokemon-btn")
+const formContainer = document.querySelector(".container")
+const addForm = document.querySelector('.add-pokemon-form')
+const searchForm = document.querySelector('#search-form')
+let cardsContainer = document.querySelector('#pokemon-collection')
 
 document.addEventListener("DOMContentLoaded", () => hideForm())
 
-// hide & seek the form  
 function hideForm() {
   addBtn.addEventListener("click", () => {
-    addPokemon = !addPokemon;
+    addPokemon = !addPokemon
     if(addPokemon) {
-      formContainer.style.display = "block";
+      formContainer.style.display = "block"
     } else {
-      formContainer.style.display = "none";
+      formContainer.style.display = "none"
     }
   })
 }
 
-// Fetch pokemons from the server with a GET request. 
 fetch('http://localhost:3000/pokemons')
 .then(resp => resp.json())
 .then(data => data.forEach(pokemon => {search(pokemon), renderPokemons(pokemon)}))
 
-// Search for a pokemon 
 function search(pokemon) {
   searchForm.addEventListener("submit", e => {
     e.preventDefault()
-    const inputName = e.target.q.value;
-    const firstletter = inputName.charAt(0);
-    const firstLetterCap = firstletter.toUpperCase();
-    const remainingLetters = inputName.slice(1);
-    const capitalizedWord = firstLetterCap + remainingLetters;
+    const inputName = e.target.q.value
+    const firstletter = inputName.charAt(0)
+    const firstLetterCap = firstletter.toUpperCase()
+    const remainingLetters = inputName.slice(1)
+    const capitalizedWord = firstLetterCap + remainingLetters
     if(capitalizedWord === pokemon.name) {
       cardsContainer.textContent = ''
       renderPokemons(pokemon)
@@ -41,10 +38,9 @@ function search(pokemon) {
   })
 }
 
-// Render pokemons in the DOM, by making a card for each pokemon and adding them to the collection div. Then, add pokemon info into cards.
 function renderPokemons(pokemon) {
-  const card = document.createElement('div');
-  card.className = 'card';
+  const card = document.createElement('div')
+  card.className = 'card'
 
   card.innerHTML = `
   <h2>${pokemon.name}</h2>
@@ -55,20 +51,18 @@ function renderPokemons(pokemon) {
   <h4>${pokemon.likes} likes</h4>
   <button class="like-btn" id=${pokemon.id}>Like ❤️</button>`
   
-  // Like button functionality
-  const likeBtn = card.querySelector('.like-btn');
+  const likeBtn = card.querySelector('.like-btn')
   likeBtn.addEventListener('click', () => {
-    const likes = card.querySelector('h4');
-    likes.textContent = `${pokemon.likes+= 1} likes`;
+    const likes = card.querySelector('h4')
+    likes.textContent = `${pokemon.likes+= 1} likes`
     updateLikes(pokemon.id, pokemon.likes)
   })
   cardsContainer.appendChild(card)
 
-  // Mouseover & mouseout event listeners for each card
-  const bigCard = document.querySelectorAll(".card");
+  const bigCard = document.querySelectorAll(".card")
   bigCard.forEach(element => {
-    element.addEventListener("mouseover", () => changeSize());
-    element.addEventListener("mouseout", () => normalSize());
+    element.addEventListener("mouseover", () => changeSize())
+    element.addEventListener("mouseout", () => normalSize())
   
     function changeSize() {
       element.style.width = '17rem'
@@ -81,7 +75,6 @@ function renderPokemons(pokemon) {
   })
 }
 
-// When submitting the form, send a POST request to create a new pokemon. If the post is successful, the pokemon should be added to the DOM without reloading the page.
 addForm.addEventListener('submit', e => {
   e.preventDefault()
   const newPokemonObj = {
@@ -96,7 +89,6 @@ addForm.addEventListener('submit', e => {
   e.target.reset()
 })
 
-// Add the new pokemon to the DOM with a POST request.
 function addNewPokemon(newPokemonObj) {
   const configObj = {
     method: 'POST',
@@ -111,7 +103,6 @@ function addNewPokemon(newPokemonObj) {
   .then(newPokemon => renderPokemons(newPokemon))
 }
 
-// Update the number of likes by sending a PATCH request to the server.
 function updateLikes(id, numberOfLikes) {
   fetch(`http://localhost:3000/pokemons/${id}`, {
     method: 'PATCH',
