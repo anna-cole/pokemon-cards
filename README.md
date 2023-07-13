@@ -29,6 +29,10 @@ We welcome any and all contributions! Here are some ways you can get started:
 4. Commit and push
 5. Wait for pull request to be merged
 
+## Check my latest blog post! 
+
+[Simple steps to capitalize the first letter of a word using JavaScript!](https://dev.to/acrrj123/simple-tutorial-on-how-to-uppercasecapitalize-the-first-letter-of-a-word-with-javascript-47hh)
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)

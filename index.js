@@ -26,11 +26,8 @@ function search(pokemon) {
   searchForm.addEventListener("submit", e => {
     e.preventDefault()
     const inputName = e.target.q.value
-    const firstletter = inputName.charAt(0)
-    const firstLetterCap = firstletter.toUpperCase()
-    const remainingLetters = inputName.slice(1)
-    const capitalizedWord = firstLetterCap + remainingLetters
-    if(capitalizedWord === pokemon.name) {
+    const capitalized = inputName.charAt(0).toUpperCase() + inputName.slice(1)
+    if(capitalized === pokemon.name) {
       cardsContainer.textContent = ''
       renderPokemons(pokemon)
     }
@@ -114,3 +111,5 @@ function updateLikes(id, numberOfLikes) {
   })
   .then(resp => resp.json())
 }
+
+
