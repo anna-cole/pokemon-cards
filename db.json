@@ -7,7 +7,7 @@
       "description": "When it is angered, it discharges the energy stored in its cheeks.",
       "type": "Electric",
       "weakness": "Ground",
-      "likes": 9
+      "likes": 11
     },
     {
       "id": 2,
@@ -80,6 +80,15 @@
       "type": "Fire",
       "weakness": "Water",
       "likes": 1
+    },
+    {
+      "name": "Meowth",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/052.png",
+      "description": "All it does is sleep during the daytime. At night, it patrols its territory with its eyes aglow.",
+      "type": "Normal",
+      "weakness": "Fighting",
+      "likes": 1,
+      "id": 10
     }
   ]
 }

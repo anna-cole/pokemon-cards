@@ -33,6 +33,10 @@ We welcome any and all contributions! Here are some ways you can get started:
 
 [Simple steps to capitalize the first letter of a word using JavaScript!](https://dev.to/acrrj123/simple-tutorial-on-how-to-uppercasecapitalize-the-first-letter-of-a-word-with-javascript-47hh)
 
+## Gif screen recording of the app working
+
+[Gif screen recording](https://capture.dropbox.com/hvhejy5s9IPW2k6N)
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
