@@ -7,7 +7,7 @@
       "description": "When it is angered, it discharges the energy stored in its cheeks.",
       "type": "Electric",
       "weakness": "Ground",
-      "likes": 11
+      "likes": 13
     },
     {
       "id": 2,
@@ -96,7 +96,7 @@
       "description": "All it does is sleep during the daytime. At night, it patrols its territory with its eyes aglow.",
       "type": "Normal",
       "weakness": "Fighting",
-      "likes": 1,
+      "likes": 0,
       "id": 11
     }
   ]
