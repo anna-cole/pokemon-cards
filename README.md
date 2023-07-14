@@ -31,7 +31,7 @@ We welcome any and all contributions! Here are some ways you can get started:
 
 ## Gif screen recording of the Pokemon cards app working
 
-[Pokemon working app](https://github.com/acrrj123/project-pokemon-cards/blob/main/ezgif.com-video-to-gif.gif)
+![](https://github.com/acrrj123/project-pokemon-cards/blob/main/ezgif.com-video-to-gif.gif)
 
 ## Watch this video to see the Pokemon cards app in action, with detailed explanation of functionalities.
 
