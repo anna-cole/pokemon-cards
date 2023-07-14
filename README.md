@@ -29,11 +29,11 @@ We welcome any and all contributions! Here are some ways you can get started:
 4. Commit and push
 5. Wait for pull request to be merged
 
-## Gif screen recording of the Pokemon cards app working
+## Pokemon cards app quick demo
 
-[Pokemon working app](https://github.com/acrrj123/project-pokemon-cards/blob/main/ezgif.com-video-to-gif.gif)
+![](https://github.com/acrrj123/project-pokemon-cards/blob/main/ezgif.com-video-to-gif.gif)
 
-## Watch this video to see the Pokemon cards app in action, with detailed explanation of functionalities.
+## Video with detailed explanation of the app functionalities
 
 [Video]()
 
