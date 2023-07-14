@@ -31,7 +31,7 @@ We welcome any and all contributions! Here are some ways you can get started:
 
 ## Gif screen recording of the Pokemon cards app working
 
-![Gif screen recording](https://capture.dropbox.com/vjZiPkulmKCyu3JB)
+[Gif screen recording](https://capture.dropbox.com/vjZiPkulmKCyu3JB)
 
 ## Watch this video to see the Pokemon cards app in action, with detailed explanation of functionalities.
 
