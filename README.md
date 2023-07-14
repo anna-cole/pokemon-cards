@@ -35,7 +35,7 @@ We welcome any and all contributions! Here are some ways you can get started:
 
 ## Video explaining the app functionalities
 
-![](https://www.youtube.com/watch?v=ewfwvFvIrPA)
+![Video app features](https://www.youtube.com/watch?v=ewfwvFvIrPA)
 
 ## Check my blog post about a technique used in this app! 
 
