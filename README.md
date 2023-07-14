@@ -31,8 +31,7 @@ We welcome any and all contributions! Here are some ways you can get started:
 
 ## Gif screen recording of the Pokemon cards app working
 
-[Gif screen recording](https://capture.dropbox.com/vjZiPkulmKCyu3JB)
-<iframe src="https://capture.dropbox.com/embed/vjZiPkulmKCyu3JB?source=copy-embed" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![Pokemon working app](https://github.com/acrrj123/project-pokemon-cards/blob/main/ezgif.com-video-to-gif.gif)
 
 ## Watch this video to see the Pokemon cards app in action, with detailed explanation of functionalities.
 
