@@ -31,7 +31,7 @@ We welcome any and all contributions! Here are some ways you can get started:
 
 ## Gif screen recording of the Pokemon cards app working
 
-[Gif screen recording](https://capture.dropbox.com/hvhejy5s9IPW2k6N)
+![Gif screen recording](https://capture.dropbox.com/vjZiPkulmKCyu3JB)
 
 ## Watch this video to see the Pokemon cards app in action, with detailed explanation of functionalities.
 
@@ -39,7 +39,7 @@ We welcome any and all contributions! Here are some ways you can get started:
 
 ## Check my latest blog post about a technique used in this app! 
 
-[Simple steps to capitalize the first letter of a word using JavaScript!](https://dev.to/acrrj123/simple-tutorial-on-how-to-uppercasecapitalize-the-first-letter-of-a-word-with-javascript-47hh)
+[Simple tutorial on how to capitalize the first letter of a word using JavaScript.](https://dev.to/acrrj123/simple-tutorial-on-how-to-uppercasecapitalize-the-first-letter-of-a-word-with-javascript-47hh)
 
 ## License
 
