@@ -33,13 +33,13 @@ We welcome any and all contributions! Here are some ways you can get started:
 
 ![](https://github.com/acrrj123/project-pokemon-cards/blob/main/ezgif.com-video-to-gif.gif)
 
-## Video with detailed explanation of the app functionalities
+## Video explaining the app functionalities
 
 [Video]()
 
-## Check my latest blog post about a technique used in this app! 
+## Check my blog post about a technique used in this app! 
 
-[Simple tutorial on how to capitalize the first letter of a word using JavaScript.](https://dev.to/acrrj123/simple-tutorial-on-how-to-uppercasecapitalize-the-first-letter-of-a-word-with-javascript-47hh)
+[Simple tutorial on how to capitalize the first letter of a word using JavaScript.](https://medium.com/@acrrj123/simple-tutorial-on-how-to-uppercase-capitalize-the-first-letter-of-a-word-with-javascript-2a43864cb402)
 
 ## License
 
