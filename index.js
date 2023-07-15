@@ -27,10 +27,10 @@ function search(pokemon) {
     e.preventDefault()
     const inputName = e.target.q.value
     const capitalized = inputName.charAt(0).toUpperCase() + inputName.slice(1)
-    if(capitalized === pokemon.name) {
-      cardsContainer.textContent = ''
-      renderPokemons(pokemon)
-    }
+    // if(capitalized === pokemon.name) {
+    //   cardsContainer.textContent = ''
+    //   renderPokemons(pokemon)
+    // }
     e.target.reset()
   })
 }
