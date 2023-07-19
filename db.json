@@ -80,42 +80,6 @@
       "type": "Fire",
       "weakness": "Water",
       "likes": 1
-    },
-    {
-      "name": "Meowth",
-      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/052.png",
-      "description": "All it does is sleep during the daytime. At night, it patrols its territory with its eyes aglow.",
-      "type": "Normal",
-      "weakness": "Fighting",
-      "likes": 1,
-      "id": 10
-    },
-    {
-      "name": "Meowth",
-      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/052.png",
-      "description": "All it does is sleep during the daytime. At night, it patrols its territory with its eyes aglow.",
-      "type": "Normal",
-      "weakness": "Fighting",
-      "likes": 0,
-      "id": 11
-    },
-    {
-      "name": "Meowth",
-      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/052.png",
-      "description": "All it does is sleep during the daytime. At night, it patrols its territory with its eyes aglow.",
-      "type": "Normal",
-      "weakness": "Water",
-      "likes": 0,
-      "id": 12
-    },
-    {
-      "name": "Meowth",
-      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/052.png",
-      "description": "beautiful",
-      "type": "Normal",
-      "weakness": "Water",
-      "likes": 0,
-      "id": 13
     }
   ]
 }
