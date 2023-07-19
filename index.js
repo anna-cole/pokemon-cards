@@ -118,5 +118,3 @@ function updateLikes(id, numberOfLikes) {
   })
   .then(resp => resp.json())
 }
-
-
