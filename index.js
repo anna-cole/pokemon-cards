@@ -20,26 +20,33 @@ function hideForm() {
 
 fetch('http://localhost:3000/pokemons')
 .then(resp => resp.json())
-.then(data => data.forEach(pokemon => {search(pokemon), renderPokemons(pokemon)}))
+.then(data => data.forEach(pokemon => renderPokemons(pokemon)))
 
 // user hits the search button, we want the code to callback fire the event listener, 
 // capture user input
 // account for case
 // compare user input for each pokemon name using find method
 // clear the page 
-function search(pokemon) {
-  searchForm.addEventListener("submit", e => {
-    e.preventDefault()
-    const inputName = e.target.q.value
-    const capitalized = inputName.charAt(0).toUpperCase() + inputName.slice(1)
-    console.log('input', capitalized, 'name' , pokemon.name)
-    if(capitalized === pokemon.name) {
+
+searchForm.addEventListener("submit", e => {
+  e.preventDefault()
+  const inputName = e.target.q.value
+  const capitalized = inputName.charAt(0).toUpperCase() + inputName.slice(1)
+
+  fetch('http://localhost:3000/pokemons')
+  .then(resp => resp.json())
+  .then(pokemonArr => searchPokemon(pokemonArr))
+
+  function searchPokemon(pokemonArr) {
+    pokemonArr.find(pokemon => {
+      if(capitalized === pokemon.name) {
       cardsContainer.textContent = ''
       renderPokemons(pokemon)
-    }
-    e.target.reset()
-  })
-}
+      }
+    })
+  }
+  e.target.reset()
+})
 
 function renderPokemons(pokemon) {
   const card = document.createElement('div')
