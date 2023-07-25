@@ -25,7 +25,7 @@ searchForm.addEventListener("submit", e => {
 
   fetch('http://localhost:3000/pokemons')
   .then(resp => resp.json())
-  .then(pokemonArr => searchPokemon(pokemonArr))
+  .then(searchPokemon)
 
   function searchPokemon(pokemonArr) {
     pokemonArr.forEach(pokemon => {
@@ -40,7 +40,7 @@ searchForm.addEventListener("submit", e => {
 
 fetch('http://localhost:3000/pokemons')
 .then(resp => resp.json())
-.then(pokemonArr => pokemonArr.forEach(pokemon => renderPokemons(pokemon)))
+.then(pokemonArr => pokemonArr.forEach(renderPokemons))
 
 function renderPokemons(pokemon) {
   const card = document.createElement('div')
@@ -104,7 +104,7 @@ function addNewPokemon(newPokemonObj) {
   }
   fetch('http://localhost:3000/pokemons', configObj)
   .then(res => res.json())
-  .then(newPokemon => renderPokemons(newPokemon))
+  .then(renderPokemons)
 }
 
 function updateLikes(id, numberOfLikes) {
