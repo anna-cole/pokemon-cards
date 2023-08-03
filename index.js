@@ -1,9 +1,8 @@
 let addPokemon = false
 const addBtn = document.querySelector("#new-pokemon-btn")
 const formContainer = document.querySelector(".container")
-const addForm = document.querySelector('.add-pokemon-form')
+const pokemonContainer = document.querySelector('#pokemon-collection')
 const searchForm = document.querySelector('#search-form')
-let cardsContainer = document.querySelector('#pokemon-collection')
 
 document.addEventListener("DOMContentLoaded", () => hideForm())
 
@@ -18,103 +17,127 @@ function hideForm() {
   })
 }
 
-searchForm.addEventListener("submit", e => {
-  e.preventDefault()
-  const inputName = e.target.q.value
-  const capitalized = inputName.charAt(0).toUpperCase() + inputName.slice(1)
-
-  fetch('http://localhost:3000/pokemons')
-  .then(resp => resp.json())
-  .then(searchPokemon)
-
-  function searchPokemon(pokemonArr) {
-    pokemonArr.forEach(pokemon => {
-      if(capitalized === pokemon.name) {
-        cardsContainer.textContent = ''
-        renderPokemons(pokemon)
-      }
-    })
-  }
-  e.target.reset()
-})
-
 fetch('http://localhost:3000/pokemons')
 .then(resp => resp.json())
-.then(pokemonArr => pokemonArr.forEach(renderPokemons))
+.then(pokemons => renderPokemon(pokemons))
 
-function renderPokemons(pokemon) {
-  const card = document.createElement('div')
-  card.className = 'card'
+function renderPokemon(pokemons) {
+  pokemons.forEach(pokemon => {
+    const card = document.createElement('div')
+    card.className = 'card'
+    const namePoke = document.createElement('h2')
+    namePoke.textContent = pokemon.name
+    const image = document.createElement('img')
+    image.className = 'pokemon-avatar'
+    image.src = pokemon.image
+    const description = document.createElement('p')
+    description.textContent = pokemon.description
+    const type = document.createElement('h4')
+    type.textContent = `Type: ${pokemon.type}`
+    type.style.color = 'blue'
+    const weakness = document.createElement('h4')
+    weakness.textContent = `Weakness: ${pokemon.weakness}`
+    weakness.style.color = 'red'
+    const button = document.createElement('button')
+    button.textContent = 'Like ❤️'
+    let likes = document.createElement('p')
+    likes.textContent = `${pokemon.likes} likes`
 
-  card.innerHTML = `
-  <h2>${pokemon.name}</h2>
-  <img src="${pokemon.image}" class="pokemon-avatar">
-  <p>${pokemon.description}</p>
-  <p style="color: blue">Type: ${pokemon.type}</p>
-  <p style="color: red">Weakness: ${pokemon.weakness}</p>
-  <h4>${pokemon.likes} likes</h4>
-  <button class="like-btn" id=${pokemon.id}>Like ❤️</button>`
-  
-  const likeBtn = card.querySelector('.like-btn')
-  likeBtn.addEventListener('click', () => {
-    const likes = card.querySelector('h4')
-    likes.textContent = `${pokemon.likes+= 1} likes`
-    updateLikes(pokemon.id, pokemon.likes)
-  })
-  cardsContainer.appendChild(card)
+    button.addEventListener('click', () => {
+      likes.textContent = `${pokemon.likes+= 1} likes` 
+      updateLikes(pokemon.id, pokemon.likes)
+    })
 
-  const bigCard = document.querySelectorAll(".card")
-  bigCard.forEach(element => {
-    element.addEventListener("mouseover", () => changeSize())
-    element.addEventListener("mouseout", () => normalSize())
-  
-    function changeSize() {
-      element.style.width = '17rem'
-      element.style.height = '27rem'
-    }
-    function normalSize() {
-      element.style.width = '15rem'
-      element.style.height = '25rem'
-    }
+    card.addEventListener('mouseover', () => {
+      card.style.width = '17rem'
+      card.style.height = '27rem'
+    })
+
+    card.addEventListener('mouseout', () => {
+      card.style.width = '15rem'
+      card.style.height = '25rem'
+    })
+
+    card.append(namePoke, image, description, type, weakness, button, likes)
+    pokemonContainer.append(card)
   })
 }
 
-addForm.addEventListener('submit', e => {
-  e.preventDefault()
-  const newPokemonObj = {
-    name: e.target.name.value,
-    image: e.target.image.value,
-    description: e.target.description.value,
-    type: e.target.type.value,
-    weakness: e.target.weakness.value,
-    likes: 0
-  }
-  addNewPokemon(newPokemonObj)
-  e.target.reset()
-})
-
-function addNewPokemon(newPokemonObj) {
-  const configObj = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json'
-    },
-    body: JSON.stringify(newPokemonObj)
-  }
-  fetch('http://localhost:3000/pokemons', configObj)
-  .then(res => res.json())
-  .then(renderPokemons)
-}
-
-function updateLikes(id, numberOfLikes) {
+function updateLikes(id, updatedLikes) {
   fetch(`http://localhost:3000/pokemons/${id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json'
     },
-    body: JSON.stringify({likes: numberOfLikes})
+    body: JSON.stringify({likes: updatedLikes})
   })
   .then(resp => resp.json())
 }
+
+const form = document.querySelector('.add-pokemon-form')
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  const name = form.name.value
+  const image = form.image.value
+  const description = form.description.value
+  const type = form.type.value
+  const weakness = form.weakness.value
+  const newPokemon = {
+    name: name,
+    image: image,
+    description: description,
+    type: type,
+    weakness: weakness,
+    likes: 0
+  }
+  updateNewPokemon(newPokemon)
+  form.reset()
+})
+
+function updateNewPokemon(newPokemon) {
+  fetch('http://localhost:3000/pokemons', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    },
+    body: JSON.stringify(newPokemon)
+  })
+  .then(resp => resp.json())
+  .then(newPokemon => {
+    newPokeArr = []
+    newPokeArr.push(newPokemon)
+    renderPokemon(newPokeArr)
+  })
+}
+
+searchForm.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch('http://localhost:3000/pokemons')
+  .then(resp => resp.json())
+  .then(pokemons => pokemons.forEach(pokemon => {
+    const input = searchForm.q.value
+    const inputCap = input.toUpperCase()
+    const pokeNameCap = pokemon.name.toUpperCase()
+    if (inputCap === pokeNameCap) {
+      newPokeArr = []
+      newPokeArr.push(pokemon)
+      pokemonContainer.textContent = ''
+      renderPokemon(newPokeArr)
+    }
+  }))
+  form.reset()
+})
+
+
+
+
+  
+  
+
+
+
+
+
+
