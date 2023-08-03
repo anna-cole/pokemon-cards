@@ -7,7 +7,7 @@
       "description": "When it is angered, it discharges the energy stored in its cheeks.",
       "type": "Electric",
       "weakness": "Ground",
-      "likes": 6
+      "likes": 7
     },
     {
       "id": 2,
@@ -80,15 +80,6 @@
       "type": "Fire",
       "weakness": "Water",
       "likes": 4
-    },
-    {
-      "name": "Woody",
-      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/052.png",
-      "description": "Zuzu",
-      "type": "Normal",
-      "weakness": "water",
-      "likes": 1,
-      "id": 10
     }
   ]
 }

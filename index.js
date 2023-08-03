@@ -132,6 +132,7 @@ searchForm.addEventListener('submit', e => {
       newPokeArr.push(pokemon)
       pokemonContainer.textContent = ''
       renderPokemon(newPokeArr)
+      searchForm.reset()
     }
   }))
 })
