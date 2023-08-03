@@ -3,6 +3,7 @@ const addBtn = document.querySelector("#new-pokemon-btn")
 const formContainer = document.querySelector(".container")
 const pokemonContainer = document.querySelector('#pokemon-collection')
 const searchForm = document.querySelector('#search-form')
+const form = document.querySelector('.add-pokemon-form')
 
 document.addEventListener("DOMContentLoaded", () => hideForm())
 
@@ -25,21 +26,28 @@ function renderPokemon(pokemons) {
   pokemons.forEach(pokemon => {
     const card = document.createElement('div')
     card.className = 'card'
+
     const namePoke = document.createElement('h2')
     namePoke.textContent = pokemon.name
+
     const image = document.createElement('img')
     image.className = 'pokemon-avatar'
     image.src = pokemon.image
+
     const description = document.createElement('p')
     description.textContent = pokemon.description
+
     const type = document.createElement('h4')
     type.textContent = `Type: ${pokemon.type}`
     type.style.color = 'blue'
+
     const weakness = document.createElement('h4')
     weakness.textContent = `Weakness: ${pokemon.weakness}`
     weakness.style.color = 'red'
+
     const button = document.createElement('button')
     button.textContent = 'Like ❤️'
+
     let likes = document.createElement('p')
     likes.textContent = `${pokemon.likes} likes`
 
@@ -75,7 +83,6 @@ function updateLikes(id, updatedLikes) {
   .then(resp => resp.json())
 }
 
-const form = document.querySelector('.add-pokemon-form')
 form.addEventListener('submit', e => {
   e.preventDefault()
   const name = form.name.value
@@ -127,17 +134,4 @@ searchForm.addEventListener('submit', e => {
       renderPokemon(newPokeArr)
     }
   }))
-  form.reset()
 })
-
-
-
-
-  
-  
-
-
-
-
-
-
