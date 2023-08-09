@@ -123,16 +123,25 @@ searchForm.addEventListener('submit', e => {
   e.preventDefault()
   fetch('http://localhost:3000/pokemons')
   .then(resp => resp.json())
-  .then(pokemons => pokemons.forEach(pokemon => {
-    const input = searchForm.q.value
-    const inputCap = input.toUpperCase()
-    const pokeNameCap = pokemon.name.toUpperCase()
-    if (inputCap === pokeNameCap) {
-      newPokeArr = []
-      newPokeArr.push(pokemon)
+  .then(pokemons => {
+    const found = pokemons.find(pokemon => {
+      const input = searchForm.q.value
+      const inputCap = input.toUpperCase()
+      const pokeNameCap = pokemon.name.toUpperCase()
+      return inputCap === pokeNameCap
+    })
+    if (found) {
       pokemonContainer.textContent = ''
+      newPokeArr = []
+      newPokeArr.push(found)
       renderPokemon(newPokeArr)
       searchForm.reset()
     }
-  }))
+    else {
+      pokemonContainer.textContent = ''
+      const message = document.createElement('h2')
+      message.textContent = 'Pokemon not found'
+      pokemonContainer.append(message)
+    }
+  })
 })
