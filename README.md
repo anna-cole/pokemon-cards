@@ -1,7 +1,11 @@
 # Pokemon cards app
 
 ## Description
-Welcome to our project! This is a Pokemon cards app made in Javascript. It allows users to quickly and easily see, create, like and search pokemon cards. With this app, users can effortlessly manage and organize their cards. We hope you enjoy and we look forward to your contributions!
+Welcome to our project! This app is a Pokemon encyclopedia, in which users can quickly and easily access information about Pokemons. My interest for Pokemons inspired me to create this app.
+
+It was Created with JavaScript, with functionalities that allow users to see, create, search and like Pokemon cards. I also utilized JSON server for data storage, and CSS to deliver a pleasant interface.
+
+We hope you enjoy and we look forward to your contributions!
 
 ## Start up the server
 All of the pokemon data is stored in the db.json file. You'll access this data using a JSON server. Install json-server globally by running this command in the terminal:
