@@ -19,12 +19,12 @@ Then, run the below in the terminal to start the server:
 json-server --watch db.json
 ```
 
-Open the index.html file on your browser. For windows, run:
+Open the index.html file on your browser. For Windows, run:
 ```bash
 explorer.exe index.html
 ```
 
-For macos, run
+For MacOS, run
 ```bash
 open index.html
 
