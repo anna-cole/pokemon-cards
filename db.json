@@ -7,7 +7,7 @@
       "description": "When it is angered, it discharges the energy stored in its cheeks.",
       "type": "Electric",
       "weakness": "Ground",
-      "likes": 0
+      "likes": 8
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "description": "When viewed through a microscope, his delicate hair can be seen.",
       "type": "Psychic",
       "weakness": "Ghost",
-      "likes": 0
+      "likes": 6
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "description": "When the bulb on its back grows large, it loses the ability to stand on its hind legs.",
       "type": "Poison",
       "weakness": "Fire",
-      "likes": 0
+      "likes": 4
     },
     {
       "id": 4,
@@ -80,6 +80,15 @@
       "type": "Fire",
       "weakness": "Water",
       "likes": 0
+    },
+    {
+      "name": "Pikachu",
+      "image": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
+      "description": "When it is angered, it discharges the energy stored in its cheeks.",
+      "type": "Electric",
+      "weakness": "Ground",
+      "likes": 0,
+      "id": 10
     }
   ]
 }

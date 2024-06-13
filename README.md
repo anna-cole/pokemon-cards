@@ -1,7 +1,7 @@
-# Pokemon cards
+# Pokemon Cards
 
 ## Description
-Pokemon app is an online Pokemon encyclopedia, where users can quickly and easily see, search, add and like Pokemon cards. It was Created with JavaScript for the frontend, JSON server for data storage and CSS for styling.
+Pokemon Cards is an online encyclopedia, where users can quickly and easily see, search, add and like Pokemon cards. It was created with JavaScript for the frontend, JSON server for data storage and CSS for styling.
 
 We hope you enjoy and we look forward to your contributions!
 
@@ -46,11 +46,11 @@ We welcome any and all contributions! Here are some ways you can get started:
 4. Commit and push
 5. Wait for pull request to be merged
 
-## Pokemon cards app quick demo
+## Pokemon Cards gif
 ![](https://github.com/acrrj123/project-pokemon-cards/blob/main/ezgif.com-video-to-gif.gif)
 
 ## Demo video
-[Demo video](https://www.youtube.com/watch?v=ewfwvFvIrPA)
+[Demo video](https://www.loom.com/share/92ef34a457724c129f255c6c7431d978?sid=65b70b01-c7fe-4836-a900-e39a72e6c15b)
 
 ## Check my blog post about a technique used in this app! 
 [Simple tutorial on how to capitalize the first letter of a word using JavaScript.](https://medium.com/@acrrj123/simple-tutorial-on-how-to-uppercase-capitalize-the-first-letter-of-a-word-with-javascript-2a43864cb402)
