@@ -1,9 +1,7 @@
-# Pokemon cards app
+# Pokemon cards
 
 ## Description
-Welcome to our project! This app is a Pokemon encyclopedia, in which users can quickly and easily access information about Pokemons. My interest for Pokemons inspired me to create this app.
-
-It was Created with JavaScript, with functionalities that allow users to see, create, search and like Pokemon cards. I also utilized JSON server for data storage, and CSS to deliver a pleasant interface.
+Pokemon app is an online Pokemon encyclopedia, where users can quickly and easily see, search, add and like Pokemon cards. It was Created with JavaScript for the frontend, JSON server for data storage and CSS for styling.
 
 We hope you enjoy and we look forward to your contributions!
 
@@ -20,13 +18,16 @@ json-server --watch db.json
 ```
 
 Open the index.html file on your browser. For Windows, run:
+
 ```bash
 explorer.exe index.html
 ```
 
-For MacOS, run
+For MacOS, run:
+
 ```bash
 open index.html
+```
 
 ## Contributing
 We welcome any and all contributions! Here are some ways you can get started:
@@ -43,19 +44,15 @@ We welcome any and all contributions! Here are some ways you can get started:
 5. Wait for pull request to be merged
 
 ## Pokemon cards app quick demo
-
 ![](https://github.com/acrrj123/project-pokemon-cards/blob/main/ezgif.com-video-to-gif.gif)
 
-## Video explaining the app functionalities
-
-[Video showing features](https://www.youtube.com/watch?v=ewfwvFvIrPA)
+## Demo video
+[Demo video](https://www.youtube.com/watch?v=ewfwvFvIrPA)
 
 ## Check my blog post about a technique used in this app! 
-
 [Simple tutorial on how to capitalize the first letter of a word using JavaScript.](https://medium.com/@acrrj123/simple-tutorial-on-how-to-uppercase-capitalize-the-first-letter-of-a-word-with-javascript-2a43864cb402)
 
 ## License
-
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ## Credits
