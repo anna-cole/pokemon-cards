@@ -29,9 +29,6 @@ For MacOS, run:
 open index.html
 ```
 
-Alternatively, simply click on the link below to open the app in your browser:
-[Pokemon Cards](https://anna-cole.github.io/pokemon-cards/)
-
 ## Contributing
 We welcome any and all contributions! Here are some ways you can get started:
 1. Report bugs: If you encounter any bugs, please let us know. Open up an issue and let us know the problem.
