@@ -1,7 +1,9 @@
-# Pokemon Cards
+# Pokemon Card Encyclopedia
 
 ## Description
-Pokemon Cards is an online encyclopedia, where users can quickly and easily see, search, add and like Pokemon cards. It was created with JavaScript for the frontend, JSON server for data storage and CSS for styling.
+An interactive online Pokemon encyclopedia that allows users to search for, create, and like custom Pokemon cards. The platform offers an intuitive search feature to explore a wide variety of Pokemons, while also enabling users to contribute by designing and sharing their own cards. With the ability to like and interact with others' creations, the app fosters a vibrant community of Pokemon fans, making it a fun and engaging space for collectors and creators alike. It was created with JavaScript for the frontend, JSON server for data storage and CSS for styling.
+
+JavaScript | JSON server | CSS | HTML
 
 We hope you enjoy and we look forward to your contributions!
 
