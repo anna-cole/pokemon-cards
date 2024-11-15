@@ -22,7 +22,12 @@ img {
 }
 
 #pokemon-collection {
+  display: flex;
+  justify-content: center; /* Centers the cards horizontally */
+  align-items: center; /* Centers the cards vertically if there's enough height */
+  flex-wrap: wrap; /* Ensures cards wrap onto the next row if necessary */
   margin: 2rem;
+  gap: 1rem; /* Adds space between the cards */
 }
 
 .card {
